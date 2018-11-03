@@ -1,12 +1,13 @@
 import React from "react";
 import { render } from "react-dom";
-import { Link, BrowserRouter, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Results from "./Results.js";
 import FourOhFour from "./FourOhFour.js";
 import Details from "./Details.js";
 import SearchParams from "./SearchParams.js";
 import pf from "petfinder-client";
 import { Provider } from "./SearchContext";
+// import Navbar from "./Navbar";
 
 const petfinder = pf({
   key: process.env.API_KEY,
@@ -77,9 +78,7 @@ class App extends React.Component {
         <Provider value={this.state}>
           <BrowserRouter>
             <div>
-              <header>
-                <Link to="/">Adopt Me!</Link>
-              </header>
+              {/* <Navbar /> */}
               <Switch>
                 <Route exact path="/" component={SearchParams} />
                 <Route exact path="/results" component={Results} />
