@@ -7,6 +7,8 @@ const match = {
   }
 };
 
+//Some basic tests for the details page
+
 test("snapshot", () => {
   const c = create(<Details match={match} />);
   expect(c.toJSON()).toMatchSnapshot();

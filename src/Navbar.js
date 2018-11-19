@@ -1,11 +1,20 @@
-// import React from "react";
-// import { Link } from "react-router-dom";
-// import styled from "react-emotion";
+import React from "react";
+import { Link } from "react-router-dom";
+import styled from "react-emotion";
 
-// const Navbar = () => {
-//   <header>
-//     <Link to="/">Adopt Me!</Link>
-//   </header>;
-// };
+//using Emotion to create styled components
 
-// export default Navbar;
+const Container = styled("header")`
+  background-color: white;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+`;
+
+const Navbar = () => (
+  <Container>
+    <Link to="/">Adopt Me!</Link>
+  </Container>
+);
+
+export default Navbar;
