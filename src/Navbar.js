@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link } from "@reach/router";
 import styled from "react-emotion";
 
 //using Emotion to create styled components

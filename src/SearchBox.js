@@ -57,7 +57,13 @@ class SearchBox extends React.Component {
               ))}
             </select>
           </label>
-          <button>Submit</button>
+          {/* <button>Submit</button> */}
+          <input
+            type="submit"
+            value="submit"
+            onClick={this.handleFormSubmit}
+            id="submit"
+          />
         </form>
       </div>
     );

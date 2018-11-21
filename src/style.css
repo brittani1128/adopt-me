@@ -3,8 +3,16 @@
   color: #333;
 }
 
+html {
+  min-height: 100%;
+}
+
 body {
-  background-color: #ad343e;
+  background-image: linear-gradient(to bottom right, #4ca1af, #c4e0e5);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+
   margin: 0;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -12,11 +20,30 @@ body {
 .search,
 .details,
 .search-params {
-  background-color: #c4b2bc;
+  /* background-color: rgba(0, 0, 0, 0.2); */
   width: 95%;
   margin: 0 auto;
   padding: 15px;
   border-radius: 5px;
+}
+
+.search-params {
+  background-color: rgba(0, 0, 0, 0.1);
+  height: 200px;
+}
+
+form {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+input#location,
+select#animal,
+select#breed {
+  flex-grow: 1;
+  /* height: 30px;
+  width: 100%; */
+  flex-basis: auto;
 }
 
 .pet {
@@ -125,13 +152,13 @@ header {
   width: 60px;
 }
 
-.search-params input,
+/* .search-params input,
 .search-params select {
   margin-bottom: 30px;
   font-size: 18px;
   height: 30px;
   width: 325px;
-}
+} */
 
 .search-params button,
 #modal button,

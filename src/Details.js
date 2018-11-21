@@ -1,7 +1,7 @@
 import React from "react";
 import pf from "petfinder-client";
 import Carousel from "./Carousel";
-import { Link } from "react-router-dom";
+import { Link } from "@reach/router";
 import Modal from "./Modal";
 
 const petfinder = pf({
@@ -20,7 +20,6 @@ class Details extends React.Component {
   };
 
   componentDidMount() {
-    console.log(this.props);
     petfinder.pet
       .get({
         output: "full",

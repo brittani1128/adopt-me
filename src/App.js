@@ -1,11 +1,10 @@
 import React from "react";
-import { render } from "react-dom";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { Router } from "@reach/router";
 import Results from "./Results.js";
-import FourOhFour from "./FourOhFour.js";
+// import FourOhFour from "./FourOhFour.js";
 import Details from "./Details.js";
 import SearchParams from "./SearchParams.js";
-import Navbar from "./Navbar.js";
+// import Navbar from "./Navbar.js";
 // import Navbar from "./Navbar";
 import { Provider } from "react-redux";
 import store from "./store";
@@ -15,21 +14,17 @@ class App extends React.Component {
     return (
       <div>
         <Provider store={store}>
-          <BrowserRouter>
-            <div>
-              <Navbar />
-              <Switch>
-                <Route exact path="/" component={SearchParams} />
-                <Route exact path="/results" component={Results} />
-                <Route path="/details/:id" component={Details} />
-                <Route component={FourOhFour} />
-              </Switch>
-            </div>
-          </BrowserRouter>
+          <Router>
+            {/* <Navbar /> */}
+            <Results path="/results" />
+            <Details path="/details/:id" />
+            <SearchParams path="/" />
+            {/* <FourOhFour /> */}
+          </Router>
         </Provider>
       </div>
     );
   }
 }
 
-render(<App />, document.getElementById("root"));
+export default App;

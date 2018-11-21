@@ -10,7 +10,9 @@
     "test:coverage": "jest --coverage",
     "format": "prettier --write \"src/**/*.{js,jsx,css,json}\"",
     "lint": "eslint \"src/**/*.{js,jsx}\"",
-    "dev": "parcel src/index.html"
+    "dev": "parcel src/index.html",
+    "build": "parcel build --public-url ./dist/ src/index.html",
+    "start": "npm -s run build && babel-node server.js"
   },
   "jest": {
     "transformIgnorePatterns": [
@@ -39,8 +41,11 @@
     "react-test-renderer": "^16.6.0"
   },
   "dependencies": {
+    "@reach/router": "^1.2.1",
+    "babel-cli": "^6.26.0",
     "emotion": "^9.2.12",
-    "petfinder-client": "0.0.3",
+    "express": "^4.16.4",
+    "petfinder-client": "0.0.2",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
     "react-emotion": "^9.2.12",

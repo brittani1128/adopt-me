@@ -29614,7 +29614,12 @@ function (_React$Component) {
           key: breed,
           value: breed
         }, breed);
-      }))), _react.default.createElement("button", null, "Submit")));
+      }))), _react.default.createElement("input", {
+        type: "submit",
+        value: "submit",
+        onClick: this.handleFormSubmit,
+        id: "submit"
+      })));
     }
   }]);
 
@@ -29742,14 +29747,12 @@ function (_React$Component) {
         });
       });
     }, _temp));
-  }
+  } // componentDidMount() {
+  //   this.search();
+  // }
+
 
   _createClass(Results, [{
-    key: "componentDidMount",
-    value: function componentDidMount() {
-      this.search();
-    }
-  }, {
     key: "render",
     value: function render() {
       return _react.default.createElement("div", {
@@ -30072,7 +30075,6 @@ function (_React$Component) {
     value: function componentDidMount() {
       var _this2 = this;
 
-      console.log(this.props);
       petfinder.pet.get({
         output: "full",
         id: this.props.match.params.id
@@ -30119,7 +30121,7 @@ function (_React$Component) {
       return _react.default.createElement("div", {
         className: "details"
       }, _react.default.createElement(_reactRouterDom.Link, {
-        to: "/results"
+        to: "/"
       }, _react.default.createElement("span", {
         "aria-label": "search"
       }, "\u2190 Back")), _react.default.createElement(_Carousel.default, {
@@ -30194,9 +30196,9 @@ function (_React$Component) {
     }
 
     return _possibleConstructorReturn(_this, (_temp = _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(SearchParams)).call.apply(_getPrototypeOf2, [this].concat(args))), _this.handleSearchSubmit = function () {
-      _react.default.createElement(_reactRouterDom.Redirect, {
+      _react.default.createElement(_reactRouterDom.Switch, null, _react.default.createElement(_reactRouterDom.Redirect, {
         to: "/results"
-      });
+      }));
     }, _temp));
   }
 
@@ -31979,7 +31981,7 @@ exports.default = animal;
 // action will have action.payload of whatever changed to
 // new state is set and react rerenders
 function animal() {
-  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : "dog";
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : "";
   var action = arguments.length > 1 ? arguments[1] : undefined;
 
   switch (action.type) {
@@ -32151,10 +32153,6 @@ function (_React$Component) {
       }, _react.default.createElement(_reactRouterDom.BrowserRouter, null, _react.default.createElement("div", null, _react.default.createElement(_Navbar.default, null), _react.default.createElement(_reactRouterDom.Switch, null, _react.default.createElement(_reactRouterDom.Route, {
         exact: true,
         path: "/",
-        component: _SearchParams.default
-      }), _react.default.createElement(_reactRouterDom.Route, {
-        exact: true,
-        path: "/results",
         component: _Results.default
       }), _react.default.createElement(_reactRouterDom.Route, {
         path: "/details/:id",
@@ -32196,7 +32194,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56554" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58716" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);

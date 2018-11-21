@@ -1,15 +1,16 @@
 import React from "react";
 import SearchBox from "./SearchBox";
-import { Redirect } from "react-router-dom";
+// import { Switch, Redirect } from "react-router-dom";
+import { navigate } from "@reach/router";
 
 class SearchParams extends React.Component {
-  handleSearchSubmit = () => {
-    <Redirect to="/results" />;
+  search = () => {
+    navigate("/results");
   };
   render() {
     return (
       <div className="search-route">
-        <SearchBox search={this.handleSearchSubmit} />
+        <SearchBox search={this.search} />
       </div>
     );
   }
