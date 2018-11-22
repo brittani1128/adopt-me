@@ -1,6 +1,6 @@
 import express from "express";
 import React from "react";
-import { renderToString } from "react-dom/server";
+import { renderToNodeStream } from "react-dom/server";
 import { ServerLocation } from "@reach/router";
 import fs from "fs";
 import App from "./src/App";
@@ -20,14 +20,30 @@ app.use("/dist", express.static("dist"));
 
 //for every other request that doesn't hit /dist
 app.use((req, res) => {
+  //sends head and meta data, including css
+  res.write(parts[0]);
+
   const reactMarkup = (
     <ServerLocation url={req.url}>
       <App />
     </ServerLocation>
   );
 
-  res.send(`${parts[0]}${renderToString(reactMarkup)}${parts[1]}`);
-  res.end();
+  const stream = renderToNodeStream(reactMarkup);
+
+  //connects stream pipe to res pipe; when stream finishes, still not done
+  stream.pipe(
+    res,
+    { end: false }
+  );
+
+  //once finished, close stream
+  stream.on("end", () => {
+    res.write(parts[1]);
+    res.end();
+  });
+
+  // res.send(`${parts[0]}${renderToString(reactMarkup)}${parts[1]}`);
 });
 
 console.log(`listening on ${PORT}`);

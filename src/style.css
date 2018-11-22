@@ -40,10 +40,9 @@ form {
 input#location,
 select#animal,
 select#breed {
-  flex-grow: 1;
-  /* height: 30px;
-  width: 100%; */
-  flex-basis: auto;
+  height: 25px;
+  border: 1px solid black;
+  border-radius: 10px;
 }
 
 .pet {

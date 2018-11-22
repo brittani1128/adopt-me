@@ -23,7 +23,7 @@ class Details extends React.Component {
     petfinder.pet
       .get({
         output: "full",
-        id: this.props.match.params.id
+        id: this.props.id
       })
       .then(data => {
         const pet = data.petfinder.pet;
