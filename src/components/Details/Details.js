@@ -1,8 +1,9 @@
 import React from "react";
 import pf from "petfinder-client";
-import Carousel from "./Carousel";
+import Carousel from "../Carousel/Carousel";
 import { Link } from "@reach/router";
-import Modal from "./Modal";
+import Modal from "../Modal/Modal";
+import "./Details.css";
 
 const petfinder = pf({
   key: process.env.API_KEY,

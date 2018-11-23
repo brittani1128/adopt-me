@@ -1,7 +1,8 @@
 import React from "react";
-import SearchBox from "./SearchBox";
+import SearchBox from "../SearchBox/SearchBox";
 // import { Switch, Redirect } from "react-router-dom";
 import { navigate } from "@reach/router";
+import "./SearchParams.css";
 
 class SearchParams extends React.Component {
   search = () => {

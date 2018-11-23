@@ -3,7 +3,7 @@ import React from "react";
 import { renderToNodeStream } from "react-dom/server";
 import { ServerLocation } from "@reach/router";
 import fs from "fs";
-import App from "./src/App";
+import App from "./src/components/App/App";
 
 const PORT = process.env.PORT || 3000;
 
@@ -12,7 +12,7 @@ const html = fs.readFileSync("dist/index.html").toString();
 //splits string around not rendered (doesn't include not rendered)
 const parts = html.split("not rendered");
 
-//set up express server
+//set up express servers
 const app = express();
 
 //someone makes request to /dist on server, look inside dist directory and serve statically

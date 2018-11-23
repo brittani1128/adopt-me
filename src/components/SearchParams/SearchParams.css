@@ -1,0 +1,21 @@
+.search-params button:hover {
+  background-color: #c36b72;
+}
+
+.search-params button:active {
+  background-color: #5f1d22;
+}
+
+.search-params button:focus {
+  border: 1px solid cornflowerblue;
+}
+
+.search-params label {
+  display: block;
+  width: 60px;
+}
+
+.search-params {
+  background-color: rgba(0, 0, 0, 0.1);
+  height: 200px;
+}

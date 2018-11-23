@@ -1,13 +1,13 @@
 import React from "react";
 import { Router } from "@reach/router";
-import Results from "./Results.js";
-// import FourOhFour from "./FourOhFour.js";
-import Details from "./Details.js";
-import SearchParams from "./SearchParams.js";
-// import Navbar from "./Navbar.js";
-// import Navbar from "./Navbar";
 import { Provider } from "react-redux";
-import store from "./store";
+import store from "../../store";
+import Results from "../Results/Results.js";
+import Details from "../Details/Details.js";
+import SearchParams from "../SearchParams/SearchParams.js";
+// import Navbar from "./Navbar.js";
+// import FourOhFour from "./FourOhFour.js";
+import "./App.css";
 
 class App extends React.Component {
   render() {
@@ -16,9 +16,9 @@ class App extends React.Component {
         <Provider store={store}>
           <Router>
             {/* <Navbar /> */}
+            <SearchParams path="/" />
             <Results path="/results" />
             <Details path="/details/:id" />
-            <SearchParams path="/" />
             {/* <FourOhFour /> */}
           </Router>
         </Provider>

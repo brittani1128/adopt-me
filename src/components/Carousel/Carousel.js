@@ -1,4 +1,5 @@
 import React from "react";
+import "./Carousel.css";
 
 class Carousel extends React.Component {
   state = {

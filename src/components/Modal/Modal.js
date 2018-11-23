@@ -1,5 +1,6 @@
 import React from "react";
 import { createPortal } from "react-dom";
+import "./Modal.css";
 
 class Modal extends React.Component {
   constructor(props) {

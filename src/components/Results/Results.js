@@ -1,7 +1,7 @@
 import React from "react";
 import pf from "petfinder-client";
-import Pet from "./Pet";
-import SearchBox from "./SearchBox";
+import Pet from "../Pet/Pet";
+import SearchBox from "../SearchBox/SearchBox";
 import { connect } from "react-redux";
 
 const petfinder = pf({

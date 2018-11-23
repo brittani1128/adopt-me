@@ -1,0 +1,36 @@
+.pet {
+  width: 100%;
+  height: 100px;
+  display: block;
+  overflow: hidden;
+  margin: 15px 0;
+}
+
+.pet img {
+  width: 100px;
+  min-height: 100px;
+}
+
+.pet h1 {
+  white-space: nowrap;
+  font-weight: normal;
+  font-size: 30px;
+  width: 100%;
+  overflow: hidden;
+  margin: 0;
+}
+
+.pet h2 {
+  white-space: nowrap;
+  font-weight: normal;
+  font-size: 20px;
+  margin: 0;
+}
+
+.image-container {
+  clip-path: circle(50% at 50% 50%);
+  width: 100px;
+  height: 100px;
+  float: left;
+  margin-right: 20px;
+}

@@ -1,0 +1,8 @@
+.details p {
+  line-height: 2;
+}
+
+.details h1,
+.details h2 {
+  text-align: center;
+}

@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "@reach/router";
+import "./Pet.css";
 
 // const Pet = props => {
 //     return React.createElement("div", {}, [
